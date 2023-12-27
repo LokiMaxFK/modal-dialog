@@ -1,0 +1,26 @@
+details[open]{
+   transition: all .4s;
+   --open: 1fr;
+}
+
+details{
+    --open: 0fr;
+}
+
+summary{
+   display: block;
+}
+
+div{
+    display: grid;
+    height: unset !important;
+    grid-template-rows:var(--open);
+    transition:grid-template-rows .4s;
+    overflow: hidden;
+}
+
+p{
+    margin: 0;
+    overflow: hidden;
+}
+

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn{
+    padding: .7em 1.5em;
+    background-color: royalblue;
+    color: white;
+    font: inherit;
+    border: none;
+    display: block;
+}
+
+.btn--close{
+   width: max-content;
+   margin: 0 auto;
+   background-color: crimson;
+}
+
+.modal{
+    border: none;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 1.5rem 3rem;
+    border-radius: 10px;
+
+    max-width: 80%;
+    animation: show-modal .7s both .5s;
+}
+
+.modal[open]::backdrop{
+    animation: show-keyframe .5s forwards;
+}
+
+.modal[close]{
+    animation: hide-modal .7s forwards;
+}
+
+.modal[close]::backdrop{
+    animation: hide-keyframe .5s  forwards;
+}
+
+.modal__img{
+    width: 80%;
+    display: block;
+    margin: 60px auto;
+    max-width: 400px;
+
+}
+
+
+::backdrop{
+    background-color: hsl(0, 0%, 0%, .7);
+}
+
+
+@keyframes show-modal {
+    0%{
+        transform: translateY(60%);
+        opacity: 0;
+    }100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+@keyframes hide-modal {
+    100%{
+        transform: translateY(60%);
+        opacity: 0;
+    }
+}
+
+@keyframes show-keyframe {
+    0%{
+        transform: translateY(100%);
+        background-color: hsl(0, 0%, 0%, .7);
+    }100%{
+        transform: translateY(0%);
+        background-color: hsl(0, 0%, 0%, .7);
+    }
+}
+
+@keyframes hide-keyframe {
+    100%{
+        transform: translateY(100%);
+    }
+}
